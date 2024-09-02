@@ -25,7 +25,7 @@ import org.signal.registration.Environments;
 import org.signal.registration.util.UUIDUtil;
 
 @Singleton
-@Requires(env = {Environments.DEVELOPMENT, Environment.TEST})
+@Requires(env = {Environments.LOCAL, Environment.TEST})
 @Requires(missingBeans = SessionRepository.class)
 public class MemorySessionRepository implements SessionRepository {
 

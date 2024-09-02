@@ -1,0 +1,36 @@
+@baseUrl = grpc://localhost:50051/org.signal.registration.rpc.RegistrationService
+@sessionId = Qs/eHiFAQJeHevQCwdGWDw==
+
+
+### Start a new registration session
+GRPC {{baseUrl}}/CreateSession
+
+{
+  "e164": "+380937820126"
+}
+
+### Get metadata of existing registration session
+GRPC {{baseUrl}}/GetSessionMetadata
+
+{
+  "session_id": "{{sessionId}}"
+}
+
+### Send a verification code to a phone number associated with a session
+GRPC {{baseUrl}}/SendVerificationCode
+
+{
+  "transport": "MESSAGE_TRANSPORT_SMS",
+  "session_id": "{{sessionId}}",
+  "accept_language": "uk",
+  "client_type": "CLIENT_TYPE_IOS",
+  "sender_name": ""
+}
+
+### Check a verification code for a registration session
+GRPC {{baseUrl}}/CheckVerificationCode
+
+{
+  "session_id": "{{sessionId}}",
+  "verification_code": "820126"
+}

@@ -14,7 +14,7 @@ import org.signal.registration.Environments;
 import java.time.Clock;
 
 @Factory
-@Requires(env = Environments.DEVELOPMENT)
+@Requires(env = Environments.LOCAL)
 class AllowAllRateLimiterFactory {
 
   private final Clock clock;

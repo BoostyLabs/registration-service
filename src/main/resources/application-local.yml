@@ -1,6 +1,6 @@
 micronaut:
   application:
-    name: registrationService
+    name: registration-service
 
   metrics:
     binders:
@@ -12,6 +12,7 @@ micronaut:
       datadog:
         enabled: false
         step: 20s
+        apiKey:
 
     tags:
       # Note that an `instance` tag is added at runtime in `Application.java`
@@ -21,3 +22,10 @@ micronaut:
     scheduled:
       type: scheduled
       core-pool-size: 16
+
+grpc:
+  server:
+    secure: false
+#    ssl:
+#      cert-chain: classpath:fullchain.pem
+#      private-key: classpath:privkey.pem

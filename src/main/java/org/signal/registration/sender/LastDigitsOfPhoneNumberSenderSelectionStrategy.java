@@ -12,7 +12,6 @@ import org.signal.registration.Environments;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Locale;
-import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -21,7 +20,7 @@ import java.util.Set;
  * never be used in a production environment.
  */
 @Singleton
-@Requires(env = Environments.DEVELOPMENT)
+@Requires(env = Environments.LOCAL)
 @Requires(missingBeans = SenderSelectionStrategy.class)
 public class LastDigitsOfPhoneNumberSenderSelectionStrategy implements SenderSelectionStrategy {
 

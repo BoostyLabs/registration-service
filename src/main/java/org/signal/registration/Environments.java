@@ -8,7 +8,7 @@ package org.signal.registration;
 public class Environments {
 
   public static final String ANALYTICS = "analytics";
-  public static final String DEVELOPMENT = "dev";
+  public static final String LOCAL = "local";
 
   private Environments() {
   }

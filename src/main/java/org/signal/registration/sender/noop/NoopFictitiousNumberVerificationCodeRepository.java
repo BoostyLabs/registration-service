@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 import org.signal.registration.Environments;
 import org.signal.registration.sender.fictitious.FictitiousNumberVerificationCodeRepository;
 
-@Requires(env = Environments.DEVELOPMENT)
+@Requires(env = Environments.LOCAL)
 @Requires(missingBeans = FictitiousNumberVerificationCodeRepository.class)
 @Singleton
 public class NoopFictitiousNumberVerificationCodeRepository implements FictitiousNumberVerificationCodeRepository {

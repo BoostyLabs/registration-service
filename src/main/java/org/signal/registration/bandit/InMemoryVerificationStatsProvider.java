@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Singleton
-@Requires(env = {Environments.DEVELOPMENT, Environment.TEST}, missingBeans = VerificationStatsProvider.class)
+@Requires(env = {Environments.LOCAL, Environment.TEST}, missingBeans = VerificationStatsProvider.class)
 public class InMemoryVerificationStatsProvider implements VerificationStatsProvider {
   private Map<String, Map<String, VerificationStats>> senderStatsByRegion = Collections.emptyMap();
 
